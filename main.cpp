@@ -15,8 +15,9 @@ int64_t timeFunc(const std::function<void()>& func) {
     TimeMeter timeMeter(2);
     timeMeter.setTimeStamp(0);
     func();
+    std::this_thread::sleep_for(std::chrono::milliseconds(10));
     timeMeter.setTimeStamp(1);
-    return timeMeter.getMSTimeStamp(1);
+    return timeMeter.getMSDiff(0, 1);
 }
 
 int sum(int a, int b) {
