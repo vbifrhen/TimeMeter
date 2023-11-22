@@ -7,6 +7,8 @@
 #include <numeric>
 #include <iterator>
 #include <cmath>
+#include <chrono>
+#include <thread>
 
 //Функция для подсчёта времени выполнения функции
 int64_t timeFunc(const std::function<void()>& func) {
@@ -26,7 +28,7 @@ int main() {
     
     TimeMeter timeMeter(2);
     timeMeter.setTimeStamp(0);
-    sleep(10);
+    std::this_thread::sleep_for(std::chrono::milliseconds(900));
     timeMeter.setTimeStamp(1);
     std::cout << timeMeter.getMSTimeStamp(1) << std::endl;
     std::cout << timeMeter.getSDiff(0, 1) << std::endl;
