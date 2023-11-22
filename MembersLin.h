@@ -1,6 +1,4 @@
-#ifndef TIMEMETER_MEMBERSLIN_H
-#define TIMEMETER_MEMBERSLIN_H
-
+#pragma once 
 #include <memory>
 
 class Members{
@@ -48,5 +46,3 @@ public:
         return getMSTimeStamp(num) < expected;
     }
 };
-
-#endif
